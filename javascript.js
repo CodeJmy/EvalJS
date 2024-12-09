@@ -40,20 +40,11 @@ function generatePassword() {
 
 // Utilisation de la fonction
 
-let generatedPassword = generatePassword();
-console.log(generatedPassword);
-
-//Fonction dans l'input password
-
-function generatePasswordButton() {
-  let passwordInput = document.getElementById('password');
-  passwordInput.value = generatePassword();
-}
-
-// Ajout de l'événement au bouton
-
-let generateButton = document.getElementById('genererPassword');
-generateButton.addEventListener('click', generatePasswordButton);
+document.getElementById('genererPassword').addEventListener('click', () => {
+    const newPassword = generatePassword(16); // Longueur par défaut : 16 caractères
+    document.getElementById('passwordInput').value = newPassword;
+    console.log('Mot de passe généré :', newPassword);
+});
 
 // Fonction pour voir le mot de passe 
 
